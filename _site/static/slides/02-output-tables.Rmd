@@ -1,7 +1,7 @@
 ---
 title: "Outputs & Tables"
 session: "02"
-subtitle: "R Markdown for Medicine"
+subtitle: "R Markdown for Pharma"
 author: Alison Hill
 date: "`r Sys.Date()`"
 output:
@@ -45,7 +45,7 @@ mockdata <- read_csv(here::here("static/mockpaper/data/mockdata.csv")) %>%
   mutate(fu_fct = fct_recode(as.factor(fu_stat), 
                              "Lived" = "1", 
                              "Died" = "2")) %>% 
-  mutate(across(starts_with("ae_"), as.factor))
+  mutate_at(vars(starts_with("ae_")), ~as.factor(.))
 ```
 
 
@@ -62,7 +62,7 @@ class: title-slide, center, middle
 
 ### `r rmarkdown::metadata$author` &#183; RStudio
 
-#### [rmd4medicine.netlify.com/](https://rmd4medicine.netlify.com/)
+#### [rmd4pharma.netlify.app/](https://rmd4pharma.netlify.app/)
 
 
 ---
@@ -72,12 +72,12 @@ class: middle, center
 
 # Go here and log in (free):
 
-https://rstd.io/rmd4medicine-cloud
+<https://rstd.io/rmd4pharma-cloud>
 
 ---
 layout: true
 
-<div class="my-footer"><span>https://rstd.io/rmd4medicine-cloud</span></div>
+<div class="my-footer"><span>https://rmd4pharma.netlify.app/</span></div>
 
 
 ---
@@ -705,6 +705,38 @@ class: middle, center, inverse
 
 ---
 
+# EDA tables: `skimr`
+
+
+```{r skim, message=FALSE, warning=FALSE}
+library(skimr)
+
+mockdata %>% 
+  select(age, fu_fct) %>% 
+  skimr::skim()
+```
+
+---
+
+````
+```{r results='asis'}`r ''`
+mockdata %>% 
+  select(age, fu_fct) %>% 
+  skimr::skim() %>% 
+  kable()
+```
+````
+
+```{r skim-kable, results='asis', echo=FALSE}
+mockdata %>% 
+  select(age, fu_fct) %>% 
+  skimr::skim() %>% 
+  kable()
+```
+
+
+---
+
 # EDA tables: `janitor`
 
 Good for 1- and 2-way frequency tables with categorical variables
@@ -732,48 +764,6 @@ mockdata %>%
 ```
 
 ]
-
----
-
-## Cross-tables
-
-```{r}
-library(gtsummary)
-mockdata %>%
-  select(arm) %>% 
-  tbl_summary()
-```
-
----
-
-## Cross-tables
-
-.pull-left[
-
-```{r}
-library(gtsummary)
-mockdata %>%
-  select(fu_fct, arm) %>% 
-  tbl_summary(by = fu_fct)
-```
-]
-
---
-
-.pull-right[
-
-```{r}
-library(gtsummary)
-mockdata %>%
-  select(fu_fct, arm) %>% 
-  tbl_cross(
-    row = arm,
-    col = fu_fct,
-    percent = "cell",
-    label = fu_fct ~ "Follow-up")
-```
-]
-
 
 ---
 
@@ -887,30 +877,43 @@ class: middle, center, inverse
 
 ---
 
-```{r}
-library(gtsummary)
-mockdata %>% 
-  select(age, fu_fct) %>% 
-  tbl_summary()
-```
+# Table One from `arsenal`
+
 
 ```{r}
-library(gtsummary)
-mockdata %>% 
-  select(sex, age, bmi, arm) %>% 
-  tbl_summary(by = arm) %>% 
-  add_p()
+tableby(arm ~ sex, data = mockdata) 
 ```
+
+--
+
 
 ```{r}
-library(gtsummary)
-mockdata %>% 
-  select(sex, age, bmi, arm) %>% 
-  tbl_summary(by = arm, 
-              type = all_continuous() ~ "continuous2") %>% 
-  add_p()
+tableby(arm ~ sex, data = mockdata) %>% 
+  summary()
 ```
 
+
+---
+
+# One more step!
+
+For R Markdown pretty printing...
+
+````
+```{r results='asis'}`r ''`
+tableby(arm ~ sex, data = mockdata) %>% 
+  summary()
+```
+````
+
+```{r results= 'asis', echo=FALSE}
+tableby(arm ~ sex, data = mockdata) %>% 
+  summary()
+```
+
+???
+
+This is a new knitr chunk option- the results option.
 
 ---
 class: your-turn
@@ -1004,15 +1007,6 @@ ae_tab <- mockdata %>%
           digits.pct = 1)
 ae_tab
 ```
-
-```{r}
-ae_tab <- 
-  mockdata %>% 
-  select(arm, starts_with("ae")) %>% 
-  tbl_summary(by = arm)
-ae_tab
-```
-
 
 ---
 class: middle, center
