@@ -1,7 +1,7 @@
 ---
 title: "Outputs & Tables"
 session: "02"
-subtitle: "R Markdown for Medicine"
+subtitle: "R Markdown for Pharma"
 author: Alison Hill
 date: "`r Sys.Date()`"
 output:
@@ -37,6 +37,7 @@ library(ymlthis)
 library(tidyverse)
 library(arsenal)
 library(janitor)
+library(knitr)
 ```
 
 ```{r load-data, include=FALSE}
@@ -61,7 +62,7 @@ class: title-slide, center, middle
 
 ### `r rmarkdown::metadata$author` &#183; RStudio
 
-#### [rmd4medicine.netlify.com/](https://rmd4medicine.netlify.com/)
+#### [rmd4pharma.netlify.app/](https://rmd4pharma.netlify.app/)
 
 
 ---
@@ -71,12 +72,12 @@ class: middle, center
 
 # Go here and log in (free):
 
-https://rstd.io/rmd4medicine-cloud
+<https://rstd.io/rmd4pharma-cloud>
 
 ---
 layout: true
 
-<div class="my-footer"><span>https://rstd.io/rmd4medicine-cloud</span></div>
+<div class="my-footer"><span>https://rmd4pharma.netlify.app/</span></div>
 
 
 ---
