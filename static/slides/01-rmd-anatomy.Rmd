@@ -1,7 +1,7 @@
 ---
 title: "R Markdown Anatomy"
 session: "01"
-subtitle: "R Markdown for Medicine"
+subtitle: "R Markdown for Pharma"
 author: Alison Hill
 date: "`r Sys.Date()`"
 output:
@@ -55,27 +55,8 @@ class: title-slide, center, middle
 
 ### `r rmarkdown::metadata$author` &#183; RStudio
 
-#### [rmd4medicine.netlify.com/](https://rmd4medicine.netlify.com/)
+#### [rmd4pharma.netlify.app/](https://rmd4pharma.netlify.app/)
 
-
----
-class: middle, center
-
-.pull-left[
-# <i class="fas fa-wifi"></i>
-
-Wifi network name  
-
-`Omni Meeting`
-]
-
-.pull-left[
-# <i class="fas fa-key"></i>
-
-Wifi password
-
-`rmedicine`
-]
 
 ---
 class: middle, center
@@ -84,26 +65,26 @@ class: middle, center
 
 # Go here and log in (free):
 
-https://rstd.io/rmd4medicine-cloud
+<http://rstd.io/rmd4pharma-cloud>
 
 ---
 class: middle, center
 
 | Time          | Activity                                |
 |:--------------|:----------------------------------------|
-| 01:00 - 01:50 | Session 1 (R Markdown Anatomy)          |
-| 01:50 - 02:00 | *Break* `r emo::ji("coffee")`           |
-| 02:00 - 02:45 | Session 2 (Outputs & Tables)            |
-| 02:45 - 03:00 | *Break* `r emo::ji("tea")`              |
-| 03:00 - 03:50 | Session 3 (Graphics for Communication)  |
-| 03:50 - 04:00 | *Break* `r emo::ji("potable_water")`    |
-| 04:00 - 04:45 | Session 4 (Data & Workflows)            |
-| 04:45 - 05:00 | Wrap-up / Overtime                      |
+| 08:00 - 08:50 | Session 1 (R Markdown Anatomy)          |
+| 08:50 - 09:00 | *Break* `r emo::ji("coffee")`           |
+| 09:00 - 09:50 | Session 2 (Outputs & Tables)            |
+| 09:50 - 10:00 | *Break* `r emo::ji("tea")`              |
+| 10:00 - 10:50 | Session 3 (Graphics for Communication)  |
+| 10:50 - 11:00 | *Break* `r emo::ji("potable_water")`    |
+| 11:00 - 11:45 | Session 4 (Data & Workflows)            |
+| 11:45 - 12:00 | Wrap-up / Overtime                      |
 
 ---
 layout: true
 
-<div class="my-footer"><span>https://rstd.io/rmd4medicine-cloud</span></div>
+<div class="my-footer"><span>https://rmd4pharma.netlify.app/</span></div>
 
 ---
 background-image: url(images/hello.jpg)
@@ -115,16 +96,12 @@ class: bottom, center
 ### Alison Hill  
 [<i class="fab fa-github"></i> @apreshill](https://github.com/apreshill)  
 [<i class="fab fa-twitter"></i> @apreshill](https://twitter.com/apreshill)
-
-### Peter Higgins  
-[<i class="fab fa-github"></i> @higgi13425](https://github.com/higgi13425)  
-[<i class="fab fa-twitter"></i> @ibddoctor](https://twitter.com/ibddoctor)
 ]
 
 .pull-right[
-### Daniel Chen  
-[<i class="fab fa-github"></i> @chendaniely](https://github.com/chendaniely)  
-[<i class="fab fa-twitter"></i> @chendaniely](https://twitter.com/chendaniely)
+### Thomas Mock 
+[<i class="fab fa-github"></i> @chendaniely](https://github.com/jthomasmock)  
+[<i class="fab fa-twitter"></i> @chendaniely](https://twitter.com/thomas_mock)
 
 ]
 
