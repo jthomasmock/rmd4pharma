@@ -1,8 +1,10 @@
 ---
 title: "Data & Workflows"
 session: "04"
-subtitle: "R Markdown for Medicine"
-author: Alison Hill
+subtitle: "R Markdown for Pharma"
+author: 
+  - Alison Hill
+  - Thomas Mock
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -50,7 +52,7 @@ class: title-slide, center, middle
 
 ### `r rmarkdown::metadata$author` &#183; RStudio
 
-#### [rmd4medicine.netlify.com/](https://rmd4medicine.netlify.com/)
+#### [rmd4pharma.netlify.app/](https://rmd4pharma.netlify.app/)
 
 
 ---
@@ -60,12 +62,12 @@ class: middle, center
 
 # Go here and log in (free):
 
-https://rstd.io/rmd4medicine-cloud
+<https://rstd.io/rmd4pharma-cloud>
 
 ---
 layout: true
 
-<div class="my-footer"><span>https://rstd.io/rmd4medicine-cloud</span></div>
+<div class="my-footer"><span>https://rmd4pharma.netlify.app/</span></div>
 
 ---
 class: middle, center, inverse
